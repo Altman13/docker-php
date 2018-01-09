@@ -15,12 +15,15 @@ ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
-    apt-get install -y wget curl && \
+    apt-get install -y wget curl lsb-release && \
     # PHP DOTDEB ###############################################################
     echo 'deb http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
+    sh -c 'echo "deb http://opensource.wandisco.com/debian `lsb_release -cs` svn18" >> /etc/apt/sources.list.d/subversion18.list' && \
+    wget -q http://opensource.wandisco.com/wandisco-debian.gpg -O- | apt-key add - && \
     apt-get update && \
+    apt-get install -y git subversion && \
     apt-get install -y \
         php5-apcu \
         php5-cgi \
