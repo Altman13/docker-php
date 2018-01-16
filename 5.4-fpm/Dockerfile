@@ -69,4 +69,4 @@ ADD fpm/php-fpm.conf ${PHP_FPM_DIR}/php-fpm.conf
 WORKDIR /srv
 
 # COMMAND
-CMD ["/usr/sbin/php5-fpm --fpm-config /etc/php5/fpm/php-fpm.conf"]
+CMD /usr/sbin/php5-fpm --fpm-config /etc/php5/fpm/php-fpm.conf
