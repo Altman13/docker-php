@@ -20,7 +20,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     echo 'deb http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     echo 'deb-src http://packages.dotdeb.org wheezy-php55 all' >> /etc/apt/sources.list.d/dotdeb.list && \
     wget http://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && rm dotdeb.gpg && \
-    sh -c 'echo "deb http://opensource.wandisco.com/debian `lsb_release -cs` svn18" >> /etc/apt/sources.list.d/subversion18.list' && \
+    sh -c 'echo "deb http://opensource.wandisco.com/debian `lsb_release -cs` svn19" >> /etc/apt/sources.list.d/subversion18.list' && \
     wget -q http://opensource.wandisco.com/wandisco-debian.gpg -O- | apt-key add - && \
     apt-get update && \
     apt-get install -y git subversion && \

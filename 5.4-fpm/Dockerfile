@@ -20,7 +20,7 @@ RUN rm /etc/apt/sources.list  && \
     echo 'deb http://archive.debian.org/debian squeeze main' >> /etc/apt/sources.list && \
     echo 'deb http://packages.dotdeb.org squeeze-php54 all' >> /etc/apt/sources.list && \
     echo 'deb-src http://packages.dotdeb.org squeeze-php54 all' >> /etc/apt/sources.list && \
-    echo 'deb http://opensource.wandisco.com/debian squeeze svn18' >> /etc/apt/sources.list && \
+    echo 'deb http://opensource.wandisco.com/debian squeeze svn19' >> /etc/apt/sources.list && \
     apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
     apt-get install -y wget curl && \
