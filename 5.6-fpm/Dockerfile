@@ -11,7 +11,7 @@ ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
 ENV PHP_FPM_DIR=/etc/php/5.6/fpm
 ENV PHP_FPM_CONF_DIR=${PHP_FPM_DIR}/conf.d
 ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
-ENV TZ=Europe/Prague
+ENV TZ=America/Los_Angeles
 
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \

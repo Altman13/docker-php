@@ -8,7 +8,7 @@ ENV PHP_CLI_DIR=/etc/php/7.0/cli
 ENV PHP_CLI_CONF_DIR=${PHP_CLI_DIR}/conf.d
 ENV PHP_CGI_DIR=/etc/php/7.0/cgi
 ENV PHP_CGI_CONF_DIR=${PHP_CGI_DIR}/conf.d
-ENV TZ=Europe/Prague
+ENV TZ=America/Los_Angeles
 
 # INSTALLATION
 RUN apt-get update && apt-get dist-upgrade -y && \
