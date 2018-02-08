@@ -31,6 +31,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
         php7.0-cli \
         php7.0-ctype \
         php7.0-curl \
+        php7.0-dev \
         php7.0-geoip \
         php7.0-gettext \
         php7.0-gd \
@@ -55,6 +56,15 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     composer global require "hirak/prestissimo:^0.3" && \
+    # Build PHP SVN ###############################################################
+        svn co http://svn.php.net/repository/pecl/svn/trunk/ && \
+        cd trunk && \
+        svn up -r 343422 && \
+        wget "https://bugs.php.net/patch-display.php?bug_id=75206&patch=php7again.diff&revision=1511799141&download=1" -O "php7.patch" && \
+        patch -p0 -l < php7.patch && \
+        phpize --clean && phpize && \
+        ./configure && \
+        make && make install && \
     # PHP MOD(s) ###############################################################
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CLI_CONF_DIR}/999-custom.ini && \
     ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_CGI_CONF_DIR}/999-custom.ini && \
