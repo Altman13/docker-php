@@ -23,7 +23,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     sh -c 'echo "deb http://opensource.wandisco.com/debian `lsb_release -cs` svn19" >> /etc/apt/sources.list.d/subversion18.list' && \
     wget -q http://opensource.wandisco.com/wandisco-debian.gpg -O- | apt-key add - && \
     apt-get update && \
-    apt-get install -y git subversion libsvn-dev && \
+    apt-get install -y git subversion libsvn-dev mysql-client rsync && \
     apt-get install -y --no-install-recommends \
         php7.0-apc \
         php7.0-apcu \
