@@ -26,7 +26,7 @@ RUN rm /etc/apt/sources.list  && \
     apt-get install -y wget curl && \
     wget -q  http://www.dotdeb.org/dotdeb.gpg -O- | apt-key add - && \
     wget -q http://opensource.wandisco.com/wandisco-debian.gpg -O- | apt-key add - && \
-    apt-get update  && apt-get install -y git subversion && \
+    apt-get update  && apt-get install -y git subversion npm && \
     apt-get install -y \
         php5-cgi \
         php5-cli \

@@ -16,11 +16,12 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y wget curl apt-transport-https ca-certificates lsb-release && \
     # PHP DEB.SURY.CZ ##########################################################
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.list.d/php.list && \
     sh -c 'echo "deb http://opensource.wandisco.com/debian `lsb_release -cs` svn19" >> /etc/apt/sources.list.d/subversion18.list' && \
     wget -q http://opensource.wandisco.com/wandisco-debian.gpg -O- | apt-key add - && \
     apt-get update && \
-    apt-get install -y git subversion && \
+    apt-get install -y git subversion nodejs && \
     apt-get install -y --no-install-recommends \
         php5.6-apc \
         php5.6-apcu \

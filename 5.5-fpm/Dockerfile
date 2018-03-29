@@ -23,7 +23,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     sh -c 'echo "deb http://opensource.wandisco.com/debian `lsb_release -cs` svn19" >> /etc/apt/sources.list.d/subversion18.list' && \
     wget -q http://opensource.wandisco.com/wandisco-debian.gpg -O- | apt-key add - && \
     apt-get update && \
-    apt-get install -y git subversion && \
+    apt-get install -y git subversion npm && \
     apt-get install -y \
         php5-apcu \
         php5-cgi \
