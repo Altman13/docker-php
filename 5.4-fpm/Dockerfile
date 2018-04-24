@@ -21,6 +21,10 @@ RUN rm /etc/apt/sources.list  && \
     echo 'deb http://packages.dotdeb.org squeeze-php54 all' >> /etc/apt/sources.list && \
     echo 'deb-src http://packages.dotdeb.org squeeze-php54 all' >> /etc/apt/sources.list && \
     echo 'deb http://opensource.wandisco.com/debian squeeze svn19' >> /etc/apt/sources.list && \
+    echo 'deb http://ppa.launchpad.net/git-core/ppa/ubuntu lucid main' >> /etc/apt/sources.list && \
+    echo 'deb-src http://ppa.launchpad.net/git-core/ppa/ubuntu lucid main' >> /etc/apt/sources.list && \
+    apt-get update && apt-get dist-upgrade -y && \
+    apt-key list | grep expired | cut -c 13-20 | xargs apt-key adv --recv-keys --keyserver keyserver.ubuntu.com $1 && \
     apt-get update && apt-get dist-upgrade -y && \
     # DEPENDENCIES #############################################################
     apt-get install -y wget curl && \
