@@ -14,12 +14,11 @@ ENV PHP_FPM_POOL_DIR=${PHP_FPM_DIR}/pool.d
 
 RUN docker-php-ext-install mbstring
 
-
 # COMPOSER #################################################################
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
 composer global require "hirak/prestissimo:^0.3" && \
 # PHP MOD(s) ###############################################################
-ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini && \
+ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini
 
 
 # FILES (it overrides originals)
