@@ -1,4 +1,4 @@
-FROM alterway/php:5.4
+FROM alterway/php:5.4-cli
 
 MAINTAINER Milan Sulc <sulcmil@gmail.com>
 

@@ -25,5 +25,3 @@ ln -s ${PHP_MODS_DIR}/custom.ini ${PHP_FPM_CONF_DIR}/999-custom.ini
 # FILES (it overrides originals)
 ADD conf.d/custom.ini ${PHP_MODS_DIR}/custom.ini
 ADD fpm/php-fpm.conf ${PHP_FPM_DIR}/php-fpm.conf
-
-git commit -m "switch 5.4 to use a different image without as many problems"
