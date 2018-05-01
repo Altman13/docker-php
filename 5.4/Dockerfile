@@ -19,7 +19,9 @@ RUN apt-get update -y \
     php-soap \
   && apt-get clean -y \
 
+
 RUN docker-php-ext-install mbstring
+RUN echo "extension=mbstring.so" > /usr/local/etc/php/conf.d/mbstring.so
 RUN docker-php-ext-install zip
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install curl
@@ -27,10 +29,9 @@ RUN docker-php-ext-install mcrypt
 RUN docker-php-ext-install json
 
 # COMPOSER #################################################################
-# COMPOSER #################################################################
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     composer global require "hirak/prestissimo:^0.3"
 
 
 # FILES (it overrides originals)
-ADD conf.d/custom.ini  /usr/local/etc/php/conf.d/custom.ini
+ADD conf.d/custom.ini /usr/local/etc/php/conf.d/custom.ini
