@@ -22,11 +22,21 @@ RUN apt-get update -y \
 
 RUN docker-php-ext-install mbstring
 RUN echo "extension=mbstring.so" > /usr/local/etc/php/conf.d/mbstring.so
+
 RUN docker-php-ext-install zip
+RUN echo "extension=zip.so" > /usr/local/etc/php/conf.d/zip.so
+
 RUN docker-php-ext-install gd
+RUN echo "extension=gd.so" > /usr/local/etc/php/conf.d/gd.so
+
 RUN docker-php-ext-install curl
+RUN echo "extension=curl.so" > /usr/local/etc/php/conf.d/curl.so
+
 RUN docker-php-ext-install mcrypt
+RUN echo "extension=mcrypt.so" > /usr/local/etc/php/conf.d/mcrypt.so
+
 RUN docker-php-ext-install json
+RUN echo "extension=json.so" > /usr/local/etc/php/conf.d/json.so
 
 # COMPOSER #################################################################
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
