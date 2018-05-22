@@ -27,6 +27,9 @@ RUN docker-php-ext-install gd
 RUN docker-php-ext-install curl
 RUN docker-php-ext-install mcrypt
 RUN docker-php-ext-install json
+RUN docker-php-ext-install pdo
+RUN docker-php-ext-install pdo_mysql
+
 
 # COMPOSER #################################################################
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \

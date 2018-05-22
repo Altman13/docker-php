@@ -16,6 +16,8 @@ RUN docker-php-ext-install gd
 RUN docker-php-ext-install curl
 RUN docker-php-ext-install mcrypt
 RUN docker-php-ext-install json
+RUN docker-php-ext-install pdo
+RUN docker-php-ext-install pdo_mysql
 
 
 # Avoid ERROR: invoke-rc.d: policy-rc.d denied execution of start.
